@@ -1,9 +1,12 @@
 {
+  // Presets são conjuntos de plugins pré-configurados
   "presets": [
-    "@babel/preset-env",
-    ["@babel/preset-react", {"runtime": "automatic"}]
+    "@babel/preset-env",     // Transpila JavaScript moderno para versões mais antigas
+    ["@babel/preset-react", {"runtime": "automatic"}]  // Suporte ao React com import automático
   ],
+
+  // Plugins são transformações específicas
   "plugins": [
-    "@babel/plugin-transform-runtime"
+    "@babel/plugin-transform-runtime"  // Ajuda com polyfills e reutilização de código do helper Babel
   ]
 } 

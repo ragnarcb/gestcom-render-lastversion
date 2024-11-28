@@ -1,57 +1,66 @@
+# Nome do pipeline de CI/CD
 name: CI/CD Pipeline
 
+# Define quando o pipeline será executado
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]  # Executa quando houver push na branch main
   pull_request:
-    branches: [ main ]
+    branches: [ main ]  # Executa quando houver pull request para main
 
 jobs:
+  # Job responsável pela construção e testes do projeto
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    # Executa em uma máquina Ubuntu mais recente
     
     steps:
+      # Faz checkout do código fonte
       - uses: actions/checkout@v4
       
-      # Configuração do Java
+      # Configuração do ambiente Java
       - name: Configurar JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: 'maven'
+          java-version: '17'          # Versão do Java
+          distribution: 'temurin'      # Distribuição do OpenJDK
+          cache: 'maven'              # Habilita cache do Maven
       
-      # Build e teste do backend
+      # Build e testes do backend (Spring Boot)
       - name: Build e Teste Backend
-        working-directory: ./core
+        working-directory: ./core      # Diretório do backend
         run: |
-          chmod +x mvnw
-          ./mvnw clean verify
+          chmod +x mvnw               # Torna o Maven wrapper executável
+          ./mvnw clean verify        # Executa build e testes
       
-      # Configuração do Node
+      # Configuração do ambiente Node.js
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'front/package-lock.json'
+          node-version: '18'          # Versão do Node.js
+          cache: 'npm'                # Habilita cache do npm
+          cache-dependency-path: 'front/package-lock.json'  # Caminho do arquivo de lock
       
+      # Instalação de dependências e build do frontend
       - name: Install Dependencies
-        working-directory: ./front
+        working-directory: ./front     # Diretório do frontend
         run: |
-          npm ci
-          npm run build:ci
+          npm ci                      # Instalação limpa das dependências
+          npm run build:ci            # Build do projeto
 
+  # Job responsável pelo deploy
   deploy:
-    needs: build-and-test
+    needs: build-and-test            # Só executa após sucesso do job anterior
+    # Só executa em push na main (não em pull requests)
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     
     steps:
+      # Deploy do backend usando webhook do Render
       - name: Deploy Backend para Render
         run: |
           curl "${{ secrets.RENDER_DEPLOY_HOOK_BACK }}"
           
+      # Deploy do frontend usando webhook do Render
       - name: Deploy Frontend para Render
         run: |
           curl "${{ secrets.RENDER_DEPLOY_HOOK_FRONT }}"

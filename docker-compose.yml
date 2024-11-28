@@ -1,49 +1,72 @@
+# Versão do Docker Compose - 3.8 suporta recursos mais recentes
 version: '3.8'
 
 services:
+  # Serviço do banco de dados PostgreSQL
   postgres:
+    # Usa a imagem oficial do PostgreSQL versão 16 com Alpine Linux (mais leve)
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: gestcom
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      # Configurações iniciais do banco de dados
+      POSTGRES_DB: gestcom           # Nome do banco de dados
+      POSTGRES_USER: ${DB_USER}      # Usuário do banco (definido em variável de ambiente)
+      POSTGRES_PASSWORD: ${DB_PASSWORD} # Senha (definida em variável de ambiente)
     volumes:
+      # Volume persistente para dados do PostgreSQL
+      # Mantém os dados mesmo após container ser destruído
       - postgres_data:/var/lib/postgresql/data
     ports:
+      # Mapeia porta 5432 do container para 5432 do host
+      # Formato: "PORTA_HOST:PORTA_CONTAINER"
       - "5432:5432"
     networks:
+      # Conecta o container à rede gestcom-network
       - gestcom-network
 
+  # Serviço do backend (API Spring Boot)
   backend:
     build: 
+      # Diretório onde está o Dockerfile do backend
       context: ./core
       dockerfile: Dockerfile
     environment:
+      # Configurações do Spring Boot para conexão com o banco
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/gestcom
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update  # Atualiza schema automaticamente
     depends_on:
+      # Garante que o PostgreSQL inicie antes do backend
       - postgres
     ports:
+      # Mapeia porta 8080 do container para 8080 do host
       - "8080:8080"
     networks:
       - gestcom-network
 
+  # Serviço do frontend (aplicação web)
   frontend:
     build:
+      # Diretório onde está o Dockerfile do frontend
       context: ./front
       dockerfile: Dockerfile
     ports:
+      # Mapeia porta 80 do container para 80 do host (HTTP)
       - "80:80"
     depends_on:
+      # Garante que o backend inicie antes do frontend
       - backend
     networks:
       - gestcom-network
 
+# Definição das redes Docker
 networks:
   gestcom-network:
+    # Usa o driver bridge (padrão para comunicação entre containers)
     driver: bridge
 
+# Definição dos volumes persistentes
 volumes:
+  # Volume para armazenar dados do PostgreSQL
   postgres_data:
+  # Docker gerencia automaticamente o local de armazenamento no host
