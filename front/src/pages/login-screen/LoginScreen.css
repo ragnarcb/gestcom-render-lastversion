@@ -1,0 +1,26 @@
+/* Centraliza o componente na tela */
+.login-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw; /* Certifique-se de que ocupa toda a largura */
+  background-color: #121212; /* Mova o fundo para cá se necessário */
+}
+
+.login-screen-container > :first-child {
+  position: absolute;
+  top: 20px; /* Ajuste conforme necessário */
+  right: 20px; /* Ajuste conforme necessário */
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

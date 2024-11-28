@@ -1,0 +1,224 @@
+/* Estrutura básica do container */
+.sh-sales-history-container {
+    padding: 20px;
+    height: 100%;
+}
+
+.sh-sales-history-container h1 {
+    margin-bottom: 20px;
+}
+
+.sh-content-container {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.sh-controls-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estrutura básica da tabela */
+.sh-table-container {
+    overflow-x: auto;
+}
+
+.sh-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sh-table-container th, 
+.sh-table-container td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Botões de ação */
+.sh-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.sh-action-button {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    border: none;
+}
+
+/* Estilos do Modal */
+.sh-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.sh-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.sh-modal-content {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1001;
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+.sh-sale-details-modal {
+    padding: 20px;
+}
+
+.sh-sale-info {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.sh-items-list {
+    margin-top: 20px;
+}
+
+.sh-items-list h3 {
+    margin-bottom: 15px;
+}
+
+/* Animações */
+.sh-entering {
+    animation: shFadeIn 0.3s ease-out;
+}
+
+.sh-exiting {
+    animation: shFadeOut 0.3s ease-out;
+}
+
+@keyframes shFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shFadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+.sh-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.sh-controls .search-container {
+    flex: 1;
+}
+
+/* Botão de fechar registro */
+.sh-close-register-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    white-space: nowrap;
+    border: none;
+}
+
+.sh-close-register-button svg {
+    font-size: 16px;
+}
+
+/* Modal de fechamento */
+.sh-closure-modal {
+    max-width: 500px;
+}
+
+.sh-closure-info {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sh-closure-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.sh-total-amount {
+    font-size: 20px !important;
+    padding: 10px 0;
+    margin: 15px 0 !important;
+}
+
+/* Botões do modal */
+.sh-modal-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.sh-cancel-button,
+.sh-confirm-button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+/* Badge de status */
+.sh-status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* Ajuste para o modal */
+.light-theme .sh-modal-content {
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .sh-modal-content {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.light-theme .sh-sale-info {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.dark-theme .sh-sale-info {
+    background-color: #424242;
+    color: #fff;
+}

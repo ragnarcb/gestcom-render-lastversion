@@ -1,0 +1,137 @@
+.form-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Label - Tema Claro */
+.light-theme .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Label - Tema Escuro */
+.dark-theme .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.required-mark {
+    color: #dc3545;
+    margin-left: 4px;
+}
+
+/* Input - Tema Claro */
+.light-theme .custom-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Input - Tema Escuro */
+.dark-theme .custom-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #666;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    background-color: #444;
+    color: #fff;
+}
+
+/* Focus - Tema Claro */
+.light-theme .custom-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Focus - Tema Escuro */
+.dark-theme .custom-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Estado de Erro - Tema Claro */
+.light-theme .custom-input.error {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+/* Estado de Erro - Tema Escuro */
+.dark-theme .custom-input.error {
+    border-color: #dc3545;
+    background-color: rgba(220,53,69,0.1);
+}
+
+/* Focus com Erro - Tema Claro */
+.light-theme .custom-input.error:focus {
+    box-shadow: 0 0 0 2px rgba(220,53,69,0.25);
+}
+
+/* Focus com Erro - Tema Escuro */
+.dark-theme .custom-input.error:focus {
+    box-shadow: 0 0 0 2px rgba(220,53,69,0.25);
+}
+
+/* Mensagem de Erro - Tema Claro */
+.light-theme .error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Mensagem de Erro - Tema Escuro */
+.dark-theme .error-message {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Textarea - Tema Claro */
+.light-theme .custom-input.textarea {
+    resize: vertical;
+    min-height: 100px;
+    background-color: #fff;
+}
+
+/* Textarea - Tema Escuro */
+.dark-theme .custom-input.textarea {
+    resize: vertical;
+    min-height: 100px;
+    background-color: #444;
+}
+
+/* Placeholder - Tema Claro */
+.light-theme .custom-input::placeholder {
+    color: #999;
+}
+
+/* Placeholder - Tema Escuro */
+.dark-theme .custom-input::placeholder {
+    color: #888;
+}
+
+/* Desabilitado - Tema Claro */
+.light-theme .custom-input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* Desabilitado - Tema Escuro */
+.dark-theme .custom-input:disabled {
+    background-color: #333;
+    cursor: not-allowed;
+}

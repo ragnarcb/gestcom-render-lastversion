@@ -1,0 +1,35 @@
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 250px; /* largura do sidebar */
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    position: relative;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Ajuste para o container de animação */
+.motion-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Garante que os containers das páginas respeitem o layout */
+.main-content > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}

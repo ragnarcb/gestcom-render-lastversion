@@ -1,0 +1,70 @@
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: none;
+    padding: 0;
+}
+
+.action-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.action-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.action-button.edit {
+    color: #2196f3;
+}
+
+.action-button.edit:hover:not(:disabled) {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+.action-button.delete {
+    color: #f44336;
+}
+
+.action-button.delete:hover:not(:disabled) {
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+.action-button.debt {
+    color: #4caf50;
+}
+
+.action-button.debt:hover:not(:disabled) {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Tema escuro */
+.dark-theme .action-button {
+    color: #fff;
+}
+
+.dark-theme .action-button.edit:hover:not(:disabled) {
+    background-color: rgba(33, 150, 243, 0.2);
+}
+
+.dark-theme .action-button.delete:hover:not(:disabled) {
+    background-color: rgba(244, 67, 54, 0.2);
+}
+
+.dark-theme .action-button.debt:hover:not(:disabled) {
+    background-color: rgba(76, 175, 80, 0.2);
+}

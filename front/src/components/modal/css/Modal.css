@@ -1,0 +1,153 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.modal-overlay.entering,
+.modal-overlay.entered {
+    opacity: 1;
+}
+
+.modal-overlay.exiting {
+    opacity: 0;
+}
+
+.modal-content {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1;
+}
+
+.modal-content.small {
+    max-width: 400px;
+}
+
+.modal-content.medium {
+    max-width: 600px;
+}
+
+.modal-content.large {
+    max-width: 800px;
+}
+
+.modal-content.entering,
+.modal-content.entered {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content.exiting {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.modal-close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.modal-close-button:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-cancel-button,
+.modal-confirm-button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.modal-cancel-button {
+    background-color: transparent;
+    border: 1px solid var(--danger-color);
+    color: var(--danger-color);
+}
+
+.modal-cancel-button:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.modal-confirm-button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+}
+
+.modal-confirm-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.modal-confirm-button:disabled {
+    background-color: var(--disabled-color);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Tema claro */
+.light-theme .modal-content {
+    background-color: #f9f9f9 !important;
+    color: #333;
+}
+
+/* Tema escuro */
+.dark-theme .modal-content {
+    background-color: #333 !important;
+    color: #fff;
+}

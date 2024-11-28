@@ -1,0 +1,38 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.barcode-input-container {
+    display: flex;
+    gap: 8px;
+}
+
+.barcode-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.barcode-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.search-barcode-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-barcode-button:hover {
+    background-color: #0056b3;
+}

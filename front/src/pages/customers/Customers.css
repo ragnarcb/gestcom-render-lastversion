@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.customers-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.content-container {
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Tema Claro */
+.light-theme .content-container {
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Tema Escuro */
+.dark-theme .content-container {
+    background: #424242;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.customers-container h1 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.light-theme .customers-container h1 {
+    color: #344767;
+}
+
+.dark-theme .customers-container h1 {
+    color: #fff;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.light-theme table {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dark-theme table {
+    background: #424242;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.light-theme th {
+    background-color: #f8f9fa;
+    color: #344767;
+    border-bottom: 1px solid #eee;
+}
+
+.dark-theme th {
+    background-color: #333;
+    color: #fff;
+    border-bottom: 1px solid #555;
+}
+
+.light-theme td {
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.dark-theme td {
+    border-bottom: 1px solid #555;
+    color: #fff;
+}
+
+.light-theme tr:hover {
+    background-color: #f8f9fa;
+}
+
+.dark-theme tr:hover {
+    background-color: #505050;
+}
+
+/* Botões de ação */
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.action-button {
+    min-width: 35px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+/* Tema Claro */
+.light-theme .action-button.edit {
+    background-color: #e8f3ff;
+    color: #007bff;
+}
+
+.light-theme .action-button.delete {
+    background-color: #ffebee;
+    color: #dc3545;
+}
+
+/* Tema Escuro */
+.dark-theme .action-button.edit {
+    background-color: rgba(0, 123, 255, 0.2);
+    color: #4da3ff;
+}
+
+.dark-theme .action-button.delete {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #ff6b6b;
+}
+
+/* Hover estados */
+.light-theme .action-button.edit:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.light-theme .action-button.delete:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.dark-theme .action-button.edit:hover {
+    background-color: #4da3ff;
+    color: white;
+}
+
+.dark-theme .action-button.delete:hover {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.add-button {
+    height: 40px;
+    padding: 0 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+/* Tema escuro */
+.dark-theme .add-button {
+    background-color: #2196f3;
+}
+
+.dark-theme .add-button:hover {
+    background-color: #1976d2;
+}
+
+/* Overlay e Modal como elementos separados */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.entering,
+.modal-overlay.entered {
+    opacity: 1;
+}
+
+.modal-overlay.exiting {
+    opacity: 0;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1001;
+}
+
+.modal-content.entering,
+.modal-content.entered {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content.exiting {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+/* Estilo para o botão de dívida */
+.action-button.debt {
+    background-color: #e8f5e9;
+    color: #4caf50;
+}
+
+.action-button.debt:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Estilos para o modal de dívida */
+.debt-modal {
+    max-width: 400px;
+}
+
+.debt-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.debt-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.debt-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.debt-button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.debt-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.add-debt {
+    background-color: #ffebee;
+    color: #dc3545;
+}
+
+.add-debt:hover:not(:disabled) {
+    background-color: #dc3545;
+    color: white;
+}
+
+.pay-debt {
+    background-color: #e8f5e9;
+    color: #4caf50;
+}
+
+.pay-debt:hover:not(:disabled) {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Tema escuro */
+.dark-theme .action-button.debt {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #69f0ae;
+}
+
+.dark-theme .action-button.debt:hover {
+    background-color: #69f0ae;
+    color: white;
+}
+
+.dark-theme .debt-info {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Estilos para inputs */
+.light-theme input[type="text"],
+.light-theme textarea {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.dark-theme input[type="text"],
+.dark-theme textarea {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.dark-theme input[type="text"]:focus,
+.dark-theme textarea:focus {
+    border-color: #64b5f6;
+    outline: none;
+}
+
+.light-theme input[type="text"]:focus,
+.light-theme textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}

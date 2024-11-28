@@ -1,0 +1,316 @@
+body, .light-theme, .dark-theme {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.dark-theme {
+    background-color: #272727;
+    color: #ffffff;
+}
+
+button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme button {
+    background-color: #007BFF;
+    color: #ffffff;
+}
+
+.dark-theme button {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Estilize outros elementos */
+.light-theme .card, .light-theme .header, .light-theme .footer, .light-theme .menu, .light-theme .content {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.dark-theme .card, .dark-theme .header, .dark-theme .footer, .dark-theme .menu, .dark-theme .content {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+/* Adicione mais estilos conforme necessário */
+
+/* Estilos comuns para tabelas */
+.light-theme .table-container {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dark-theme .table-container {
+    background: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.light-theme th {
+    background-color: #f8f9fa;
+    color: #344767;
+    border-bottom: 1px solid #eee;
+}
+
+.dark-theme th {
+    background-color: #424242;
+    color: #fff;
+    border-bottom: 1px solid #555;
+}
+
+.light-theme td {
+    color: #4a5568;
+    border-bottom: 1px solid #eee;
+}
+
+.dark-theme td {
+    color: #ddd;
+    border-bottom: 1px solid #555;
+}
+
+.light-theme .action-button {
+    background: none;
+}
+
+.dark-theme .action-button {
+    background: none;
+}
+
+/* Cores de ação */
+.light-theme .action-button.edit {
+    color: #2196f3;
+}
+
+.dark-theme .action-button.edit {
+    color: #64b5f6;
+}
+
+.light-theme .action-button.delete {
+    color: #f44336;
+}
+
+.dark-theme .action-button.delete {
+    color: #ef5350;
+}
+
+.light-theme .action-button.debt {
+    color: #4caf50;
+}
+
+.dark-theme .action-button.debt {
+    color: #81c784;
+}
+
+/* Estilos para o ImageUpload com maior especificidade */
+.dark-theme .table-container.image-upload-container {
+    background-color: #333 !important;
+    border-color: #555;
+}
+
+.light-theme .table-container.image-upload-container {
+    background-color: #ffffff !important;
+    border-color: #ddd;
+}
+
+.dark-theme .image-preview-container {
+    background-color: #424242 !important;
+    border-color: #555;
+}
+
+.light-theme .image-preview-container {
+    background-color: #f8f9fa !important;
+    border-color: #ddd;
+}
+
+.light-theme .upload-placeholder {
+    color: #666;
+}
+
+.dark-theme .upload-placeholder {
+    color: #aaa;
+}
+
+.light-theme .upload-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.dark-theme .upload-button {
+    background-color: #424242;
+    color: white;
+}
+
+.light-theme .upload-button:hover {
+    background-color: #0056b3;
+}
+
+.dark-theme .upload-button:hover {
+    background-color: #555;
+}
+
+.light-theme .upload-icon {
+    color: #666;
+}
+
+.dark-theme .upload-icon {
+    color: #aaa;
+}
+
+/* Estilos para o CategorySelect */
+.light-theme .category-select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.dark-theme .category-select {
+    background-color: #424242;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.light-theme .category-select:focus {
+    border-color: #007bff;
+}
+
+.dark-theme .category-select:focus {
+    border-color: #64b5f6;
+}
+
+.light-theme label {
+    color: #666;
+}
+
+.dark-theme label {
+    color: #aaa;
+}
+
+.light-theme .custom-select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.dark-theme .custom-select {
+    background-color: #424242;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.light-theme .new-category-inputs {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.dark-theme .new-category-inputs {
+    background-color: #424242;
+    border: 1px solid #555;
+}
+
+.light-theme .new-category-inputs input {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.dark-theme .new-category-inputs input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.light-theme .add-category-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.dark-theme .add-category-btn {
+    background-color: #424242;
+    color: white;
+}
+
+.light-theme .add-category-btn:hover {
+    background-color: #0056b3;
+}
+
+.dark-theme .add-category-btn:hover {
+    background-color: #555;
+}
+
+/* Botões de nova categoria */
+.light-theme .new-category-buttons button:first-child {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.dark-theme .new-category-buttons button:first-child {
+    background-color: #388E3C;
+    color: white;
+}
+
+.light-theme .new-category-buttons button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
+.dark-theme .new-category-buttons button:last-child {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* Ajustes para modais */
+.light-theme .modal-content,
+.light-theme .product-modal-content,
+.light-theme .debt-modal {
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .modal-content,
+.dark-theme .product-modal-content,
+.dark-theme .debt-modal {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.light-theme .debt-info {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.dark-theme .debt-info {
+    background-color: #424242;
+    color: #fff;
+}
+
+/* Estilos para o botão dropdown */
+.light-theme .category-select:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+.dark-theme .category-select:hover {
+    background-color: #555;
+    border-color: #666;
+}
+
+.dark-theme .category-select option {
+    background-color: #424242;
+    color: #fff;
+}
+
+.dark-theme .category-select option:hover {
+    background-color: #555;
+}
+
+.light-theme .category-select option {
+    background-color: #fff;
+    color: #333;
+}
+ 

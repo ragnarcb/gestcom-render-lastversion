@@ -1,0 +1,131 @@
+.product-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.product-modal-content {
+    padding: 32px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.product-form-container {
+    padding: 0;
+    width: 100%;
+}
+
+.product-form-group {
+    margin-bottom: 24px;
+}
+
+.manual-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.product-image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 150px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.product-image-upload:hover {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+}
+
+.product-image-upload p {
+    margin: 10px 0;
+    color: #666;
+    text-align: center;
+}
+
+.product-select-image-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    margin-top: 16px;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.product-select-image-btn:hover {
+    background-color: #0056b3;
+}
+
+.product-image-preview {
+    width: 200px;
+    height: 200px;
+    margin-top: 16px;
+    border-radius: 8px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .product-modal-content {
+        padding: 16px;
+    }
+
+    .product-image-upload {
+        margin: 10px 0;
+        padding: 15px;
+    }
+}

@@ -1,0 +1,117 @@
+.users-management-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.users-management-container h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.content-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.content-container > :first-child {
+    margin-bottom: 20px;
+}
+
+/* Estilização da tabela */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #f5f5f5;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Botões de ação */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.edit-button:hover {
+    background-color: #1976d2;
+}
+
+/* Mensagens de estado */
+.table-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.error-message {
+    color: #d32f2f;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .users-management-container {
+        padding: 10px;
+    }
+
+    .content-container {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+}
+
+/* Tema claro */
+.light-theme .content-container {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tema escuro */
+.dark-theme .content-container {
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .users-management-container h1 {
+    color: #fff;
+} 

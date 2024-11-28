@@ -1,0 +1,71 @@
+.payment-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.payment-option:hover {
+    background-color: #f5f5f5;
+}
+
+.payment-option.selected {
+    border-color: #28a745;
+    background-color: #e8f5e9;
+}
+
+.payment-option svg {
+    font-size: 24px;
+    color: #666;
+}
+
+.payment-option.selected svg {
+    color: #28a745;
+}
+
+.payment-option span {
+    font-size: 14px;
+    color: #666;
+}
+
+.payment-option.selected span {
+    color: #28a745;
+}
+
+/* Tema escuro */
+.dark-theme .payment-option {
+    border-color: #666;
+}
+
+.dark-theme .payment-option:hover {
+    background-color: #444;
+}
+
+.dark-theme .payment-option.selected {
+    border-color: #4caf50;
+    background-color: #1b5e20;
+}
+
+.dark-theme .payment-option svg,
+.dark-theme .payment-option span {
+    color: #fff;
+}
+
+.dark-theme .payment-option.selected svg,
+.dark-theme .payment-option.selected span {
+    color: #4caf50;
+}

@@ -1,0 +1,72 @@
+/* src/components/SideBar/sidebar.css */
+
+/* Importando a fonte Roboto do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme .sidebar {
+  background-color: #d8d5d5;
+  color: #333;
+}
+
+.dark-theme .sidebar {
+  background-color: #333;
+  color: #fff;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  border-radius: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.light-theme .sidebar ul li a {
+  color: #333;
+}
+
+.dark-theme .sidebar ul li a {
+  color: #fff;
+}
+
+.sidebar ul li a.active {
+  background-color: #555;
+  color: #fff;
+}
+
+.sidebar ul li a:hover {
+  background-color: #afaeae;
+  transform: scale(1.05);
+}
+
+li span{
+  margin-left: 10px;
+}

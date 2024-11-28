@@ -1,0 +1,90 @@
+.debt-modal {
+    max-width: 500px;
+}
+
+.debt-info {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.debt-info p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.debt-info p:last-child {
+    font-weight: 500;
+    color: #dc3545;
+}
+
+.debt-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.debt-button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.debt-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.add-debt {
+    background-color: #dc3545;
+    color: white;
+}
+
+.add-debt:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+.pay-debt {
+    background-color: #28a745;
+    color: white;
+}
+
+.pay-debt:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Animações */
+.modal-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.entering,
+.modal-overlay.entered {
+    opacity: 1;
+}
+
+.modal-overlay.exiting {
+    opacity: 0;
+}
+
+.modal-content {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.modal-content.entering,
+.modal-content.entered {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content.exiting {
+    transform: translateY(20px);
+    opacity: 0;
+}
