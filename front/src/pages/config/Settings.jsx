@@ -1,5 +1,5 @@
 // src/pages/settings/Settings.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import MainLayout from '../../components/layouts/MainLayout';
 import Button from '../../components/buttons/Button';
@@ -11,7 +11,9 @@ const Settings = () => {
     const navigate = useNavigate();
 
     const handleUserManagement = () => {
-        window.open('/users-management', '_blank');
+        // Usar a URL base do Render
+        const baseUrl = import.meta.env.VITE_API_URL || window.location.origin;
+        window.open(`${baseUrl}/users-management`, '_blank');
     };
 
     return (
