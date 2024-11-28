@@ -67,6 +67,10 @@ const router = createBrowserRouter([
   {
     path: "/users-management",
     element: <ProtectedRoute><UsersManagement /></ProtectedRoute>,
+  },
+  {
+    path: "*",
+    element: <ProtectedRoute><Home /></ProtectedRoute>,
   }
 ], routerOptions);
 
