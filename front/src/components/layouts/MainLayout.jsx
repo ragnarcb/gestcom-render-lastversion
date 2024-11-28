@@ -1,7 +1,7 @@
 // src/components/MainLayout.jsx
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import SideBar from '../SideBar/sideBar';
+import SideBar from "../sidebar/SideBar"
 import { useLocation } from 'react-router-dom';
 import './MainLayout.css';
 
