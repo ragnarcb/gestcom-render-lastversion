@@ -1,5 +1,5 @@
 // src/pages/settings/Settings.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import MainLayout from '../../components/layouts/MainLayout';
 import Button from '../../components/buttons/Button';
