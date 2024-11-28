@@ -1,52 +1,67 @@
-import React, { useState, useEffect } from 'react';
-import MainLayout from '../../components/layouts/MainLayout';
-import { authService } from '../../services/AuthService';
-import './UsersManagement.css';
+import React from 'react';
+import { useUsers } from "../../hooks/useUsers";
+import ProductsHeader from "../../components/layouts/ProductsHeader";
+import UsersTable from "../../components/tables/UsersTable";
+import CreateUser from "../../components/users/createUser"; // Ajustado o caminho
+import "./UsersManagement.css";
 
 const UsersManagement = () => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [activeFilters, setActiveFilters] = useState({});
+    const { users, loading, error, refetchUsers } = useUsers(searchTerm, activeFilters);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                setLoading(true);
-                // Implementar lógica de busca de usuários
-                const response = await authService.getUsers();
-                setUsers(response.data);
-            } catch (err) {
-                setError('Erro ao carregar usuários');
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
-        };
+    const handleSort = (groupId, value) => {
+        setActiveFilters(prev => ({
+            ...prev,
+            [groupId]: prev[groupId] === value ? undefined : value
+        }));
+    };
 
-        fetchUsers();
-    }, []);
+    const handleEdit = (user) => {
+        setSelectedUser(user);
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setSelectedUser(null);
+        refetchUsers();
+    };
 
     return (
-        <MainLayout>
-            <div className="users-management">
-                <h1>Gerenciamento de Usuários</h1>
-                
-                {loading && <p>Carregando...</p>}
-                {error && <p className="error">{error}</p>}
-                
-                {!loading && !error && (
-                    <div className="users-list">
-                        {users.map(user => (
-                            <div key={user.id} className="user-card">
-                                <h3>{user.name}</h3>
-                                <p>Email: {user.email}</p>
-                                <p>Papel: {user.role}</p>
-                            </div>
-                        ))}
-                    </div>
-                )}
+        <div className="users-management-container">
+            <h1>Gerenciamento de Usuários</h1>
+            
+            <div className="content-container">
+                <ProductsHeader 
+                    searchTerm={searchTerm}
+                    onSearchChange={(e) => setSearchTerm(e.target.value)}
+                    onSortChange={handleSort}
+                    activeFilters={activeFilters}
+                    filterType="users"
+                    addButtonText="Adicionar Usuário"
+                    onAddClick={() => {
+                        setSelectedUser(null);
+                        setShowModal(true);
+                    }}
+                />
+
+                <UsersTable 
+                    users={users}
+                    loading={loading}
+                    error={error}
+                    onEdit={handleEdit}
+                />
+
+                <CreateUser 
+                    isOpen={showModal}
+                    onClose={handleCloseModal}
+                    userData={selectedUser}
+                />
             </div>
-        </MainLayout>
+        </div>
     );
 };
 
