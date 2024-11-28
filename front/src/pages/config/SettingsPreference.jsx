@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './SettingsPreference.css';
 import Button from '../../components/buttons/Button';
 import MainLayout from '../../components/layouts/MainLayout';
-import StockPreferences from '../../components/settings/StockPreferences';
-import AppearanceSettings from '../../components/settings/AppearanceSettings';
-import NotificationSettings from '../../components/settings/NotificationSettings';
+import StockPreferences from '../../components/Settings/StockPreferences';
+import AppearanceSettings from '../../components/Settings/AppearanceSettings';
+import NotificationSettings from '../../components/Settings/NotificationSettings';
 import { ToastContainer, toast } from 'react-toastify';
 import { ThemeContext } from '../../context/ThemeContext';
 

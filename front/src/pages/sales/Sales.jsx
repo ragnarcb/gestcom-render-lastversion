@@ -7,7 +7,7 @@ import SearchInput from '../../components/input/SearchInput';
 import ShoppingCart from '../../components/cart/ShoppingCart';
 import PaymentContent from '../../components/Payment/PaymentContent';
 import ProductGrid from '../../components/ItensConponent/ProductGrid';
-import PaymentOptions from '../../components/payment/paymentOptions/PaymentOptions';
+import PaymentOptions from '../../components/Payment/paymentOptions/PaymentOptions';
 import Modal from '../../components/modal/Modal';
 import { useCart } from '../../hooks/useCart';
 import { useProducts } from '../../hooks/useProducts';

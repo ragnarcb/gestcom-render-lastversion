@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useUsers } from '../../hooks/useUsers';
-import ProductsHeader from '../../components/layouts/ProductsHeader';
-import UsersTable from '../../components/tables/UsersTable';
-import CreateUser from '../../components/users/CreateUser';
-import './UsersManagement.css';
+import React from 'react';
+import { useUsers } from "../../hooks/useUsers";
+import ProductsHeader from "../../components/layouts/ProductsHeader";
+import UsersTable from "../../components/tables/UsersTable";
+import CreateUser from "../../components/users/createUser"; // Ajustado o caminho
+import "./UsersManagement.css";
 
 const UsersManagement = () => {
     const [searchTerm, setSearchTerm] = useState('');
