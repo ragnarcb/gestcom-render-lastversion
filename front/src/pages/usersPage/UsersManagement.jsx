@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useUsers } from "../../hooks/useUsers";
 import ProductsHeader from "../../components/layouts/ProductsHeader";
 import UsersTable from "../../components/tables/UsersTable";
