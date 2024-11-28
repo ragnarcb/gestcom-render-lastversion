@@ -4,6 +4,7 @@ import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
+// ESLint define regras de qualidade e padrões de código
 export default [
   // Ignora a pasta dist (arquivos buildados)
   { ignores: ['dist'] },
