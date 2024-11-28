@@ -19,11 +19,16 @@ public class GestcomApplication {
     @Bean
     public CommandLineRunner commandLineRunner(UsuarioController usuarioController) {
         return args -> {
-            UsuarioDTO usuarioAdmin = new UsuarioDTO(null, "admin", "admin@gmail.com", "Admin122!", UsuariosRoles.ADMIN);
-            UsuarioDTO usuarioComum = new UsuarioDTO(null, "comum", "comum@gmail.com", "Comum1232!", UsuariosRoles.USER);
+            try {
+                UsuarioDTO usuarioAdmin = new UsuarioDTO(null, "admin", "admin@gmail.com", "FC36ONL%IXq23Q*@d7hGALXvz4Q$otU", UsuariosRoles.ADMIN);
+                UsuarioDTO usuarioComum = new UsuarioDTO(null, "comum", "comum@gmail.com", "TZ#DVyXAuSe8MBK7!6!zEvUR8TXgoz%", UsuariosRoles.USER);
 
-            usuarioController.save(usuarioAdmin);
-            usuarioController.save(usuarioComum);
+                usuarioController.save(usuarioAdmin);
+                usuarioController.save(usuarioComum);
+            } catch (Exception e) {
+                // Usuário já existe, podemos ignorar
+                System.out.println("Usuário admin já existe");
+            }
         };
     }
 
